@@ -27,18 +27,18 @@ b = Ingredient.create(name:"Burbon")
 
 m = Measurement.new
 m.amount = "1.5 tsp"
-m.ingredient << honey
-m.recipe << brown_derby
+m.ingredient_id = honey.id
+m.recipe_id = brown_derby.id
 m.save
 
 m2 = Measurement.new
 m2.amount = "1.5 tsp"
-m2.ingredient << water
-m2.recipe << brown_derby
+m2.ingredient_id = water.id
+m2.recipe_id = brown_derby.id
 m2.save
 
 m3 = Measurement.new
 m3.amount = "1 oz"
-m3.ingredient << b
-m3.recipe << brown_derby
+m3.ingredient_id = b.id
+m3.recipe_id = brown_derby.id
 m3.save
