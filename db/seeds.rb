@@ -27,17 +27,30 @@ old_f = Recipe.create({
   instructions: "Pour the simple syrup, water, and bitters into a whiskey glass. Stir to combine, then place the ice cubes in the glass. Pour bourbon over the ice and garnish with the orange slice and maraschino cherry."
   })
 
+g_hound = Recipe.create({
+  name: "Greyhound",
+  instructions: "Add the vodka and grapefruit juice. Stir and pour over ice. Add simple syrup as needed."
+  })
+
+mule = Recipe.create({
+  name: "Moscow Mule",
+  instructions: "Pour vodka and lime juice into a mug; add ice cubes and ginger beer. Stir to combine. Add lime wedge for garnish."
+  })
+
 #Ingredients
 
 t = Ingredient.create(name:"Tequila")
 b = Ingredient.create(name:"Bourbon")
+v = Ingredient.create(name:"Vodka")
 
 gm = Ingredient.create(name:"Grand Marnier Orange Liqueur")
 
 gf = Ingredient.create(name:"Grapefruit juice")
 honey = Ingredient.create(name: "Honey")
 water = Ingredient.create(name: "Water")
+g_beer = Ingredient.create(name: "Ginger beer")
 lime_j = Ingredient.create(name: "Lime juice")
+lime_w = Ingredient.create(name: "Lime wedge")
 agav = Ingredient.create(name:"Agave nector")
 ss = Ingredient.create(name:"Simple syrup")
 bit = Ingredient.create(name: "Bitters")
@@ -129,3 +142,51 @@ m13.amount = "1"
 m13.ingredient_id = m_cherry.id
 m13.recipe_id = old_f.id
 m13.save
+
+m14 = Measurement.new
+m14.amount = "(optional) to taste"
+m14.ingredient_id = ss.id
+m14.recipe_id = g_hound.id
+m14.save
+
+m15 = Measurement.new
+m15.amount = "2 oz"
+m15.ingredient_id = v.id
+m15.recipe_id = g_hound.id
+m15.save
+
+m16 = Measurement.new
+m16.amount = "4 oz"
+m16.ingredient_id = gf.id
+m16.recipe_id = g_hound.id
+m16.save
+
+m17 = Measurement.new
+m17.amount = "1.5 oz"
+m17.ingredient_id = v.id
+m17.recipe_id = mule.id
+m17.save
+
+m18 = Measurement.new
+m18.amount = "5 oz"
+m18.ingredient_id = lime_j.id
+m18.recipe_id = mule.id
+m18.save
+
+m19 = Measurement.new
+m19.amount = "4 oz"
+m19.ingredient_id = g_beer.id
+m19.recipe_id = mule.id
+m19.save
+
+m20 = Measurement.new
+m20.amount = "1"
+m20.ingredient_id = lime_w.id
+m20.recipe_id = mule.id
+m20.save
+
+m21 = Measurement.new
+m21.amount = "1.5 oz"
+m21.ingredient_id = v.id
+m21.recipe_id = mule.id
+m21.save
